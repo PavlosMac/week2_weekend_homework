@@ -1,6 +1,6 @@
 class Guest
 
-  attr_accessor(:name, :wallet)
+  attr_accessor(:name, :favourite_song, :wallet)
 
   def initialize(name, wallet, favourite_song)
     @name = name

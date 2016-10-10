@@ -12,10 +12,7 @@ class TestGuest < MiniTest::Test
     assert_equal("Tobby", @guest1.name)
   end
 
-  def test_guest_can_react
-    assert_equal(@guest1.react, "Wayyyheyyy!!")
-  end
-
+ 
 
 
 end

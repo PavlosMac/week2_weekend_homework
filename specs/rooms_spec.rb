@@ -41,78 +41,79 @@ def setup
 
 end
 
-  # def test_room_has_name
-  #   assert_equal(@room1.name, "Rock room")
-  # end
-
-  # def test_room_has_one_guest
-  #   @room1.check_in_guest(@guests1[0])
-  #   assert_equal(@room1.guests.count, 1)
-  # end
-
-  # def test_room_has_more_than_one_guest
-  #   @room3.check_in_multiple_guests(@guests3)
-  #   guest_count = @room3.guests.count
-  #   assert_equal(guest_count, 4)
-  # end
-
-  # def test_add_one_song_to_room
-  #   @room1.add_songs_to_room(@song2)
-  #   song_title = @room1.songs.first.title
-  #   assert_equal(song_title,"Welcome to the jungle" )
-  # end
-
-
-  # def test_add_songs_to_room
-  #   @room1.add_songs_to_room(@songs)
-  #   song_count = @room1.songs.count
-  #   assert_equal(song_count, 3)
-  # end
-
-  # def test_song_in_room_has_title
-  #   @room1.add_songs_to_room(@song1)
-  #   first_songs_title = @room1.songs.first.title
-  #   assert_equal(first_songs_title, "Imagine")
-  # end
-
-  # def test_song_in_room_has_artist
-  #   @room1.add_songs_to_room(@song1)
-  #   first_songs_artist = @room1.songs.first.artist
-  #   assert_equal(first_songs_artist, "John Lennon")
-  # end
-
-  # def test_room_is_full
-  #   result = @room1.check_in_multiple_guests(@guests1)
-  #   assert_equal(result, "full")
-  # end
-
-  # def test_guest_can_pay_entry_fee
-  #   @room1.check_in_guest(@guest6)
-  #   assert_equal(@guest6.wallet, 20)
-  # end 
-
-  # def test_guest_can_afford_entry_fee
-  #   result = @room2.check_in_guest(@guest7)
-  #   assert_equal(nil, result)
-  # end
-
-  # def test_multiple_guests_can_afford_entry_fee
-  #   @room4.check_in_multiple_guests(@guests4)
-  #   expect = @room4.guests.count
-  #   assert_equal(2, expect)
-  # end
-
-  # def test_that_guests_have_paid
-  #   @room4.check_in_multiple_guests(@guests2)
-  #   modified_guest_wallet = @guests2[0].wallet
-  #   assert_equal(modified_guest_wallet, 32)
-  # end
-
-  def test_guest_finds_favourite_song
-    @room3.add_songs_to_room(@songs2)
-    result = @room3.check_in_multiple_guests(@guests2)
-    assert_equal(result, "Waayyyheeyyyy!")
+  def test_room_has_name
+    assert_equal(@room1.name, "Rock room")
   end
+
+  def test_room_has_one_guest
+    @room1.check_in_guest(@guests1[0])
+    assert_equal(@room1.guests.count, 1)
+  end
+
+  def test_room_has_more_than_one_guest
+    @room3.check_in_multiple_guests(@guests3)
+    guest_count = @room3.guests.count
+    assert_equal(guest_count, 4)
+  end
+
+  def test_add_one_song_to_room
+    @room1.add_songs_to_room(@song2)
+    song_title = @room1.songs.first.title
+    assert_equal(song_title,"Welcome to the jungle" )
+  end
+
+
+  def test_add_songs_to_room
+    @room1.add_songs_to_room(@songs)
+    song_count = @room1.songs.count
+    assert_equal(song_count, 3)
+  end
+
+  def test_song_in_room_has_title
+    @room1.add_songs_to_room(@song1)
+    first_songs_title = @room1.songs.first.title
+    assert_equal(first_songs_title, "Imagine")
+  end
+
+  def test_song_in_room_has_artist
+    @room1.add_songs_to_room(@song1)
+    first_songs_artist = @room1.songs.first.artist
+    assert_equal(first_songs_artist, "John Lennon")
+  end
+
+  def test_room_is_full
+    result = @room1.check_in_multiple_guests(@guests1)
+    assert_equal(result, "full")
+  end
+
+  def test_guest_can_pay_entry_fee
+    @room1.check_in_guest(@guest6)
+    assert_equal(@guest6.wallet, 20)
+  end 
+
+  def test_guest_can_afford_entry_fee
+    result = @room2.check_in_guest(@guest7)
+    assert_equal(nil, result)
+  end
+
+  def test_multiple_guests_can_afford_entry_fee
+    @room4.check_in_multiple_guests(@guests4)
+    expect = @room4.guests.count
+    assert_equal(2, expect)
+  end
+
+  def test_that_guests_have_paid
+    @room4.check_in_multiple_guests(@guests2)
+    modified_guest_wallet = @guests2[0].wallet
+    assert_equal(modified_guest_wallet, 32)
+  end
+
+  # def test_guest_finds_favourite_song
+  #   @room3.add_songs_to_room(@songs2)
+  #   @room3.check_in_multiple_guests(@guests2)
+  #   result = @room3.any_favourite_song?
+  #   assert_equal(result, "Wahheyy!")
+  # end
 
 
 end

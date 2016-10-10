@@ -15,17 +15,15 @@ class Room
     if guest.wallet > @entry_fee
       @guests << guest
       guest.wallet -= @entry_fee 
-      favourite_song(guest)
     else
       return nil
     end
   end
 
-  def favourite_song(guests)
-    titles = @songs.map{ |song| song.title }
-    guests_favourite_songs = guests.map{ |guest| guest.favourite_song }   
-    return guests[0].react if guests_favourite_songs.include?(titles)
-  end
+
+  # def any_favourite_song(guests)
+
+  # end
     
 
 
@@ -34,8 +32,8 @@ class Room
         guests_that_pass = guests.select{|guest| guest.wallet >= @entry_fee} 
         guests_that_pass.map{|guest| guest.wallet -= @entry_fee}
         @guests.push(guests_that_pass)
-        favourite_song(guests)
-        return @guests.flatten! 
+        # any_favourite_song(guests)
+        return @guests.flatten!
     else
         return "full"
     end
